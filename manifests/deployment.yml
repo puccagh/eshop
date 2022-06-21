@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: eshop 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eshop
+  template:
+    metadata:
+      labels:
+        app: eshop 
+    spec:
+      containers:
+        - name: eshop 
+          image: scbtechxacr001.azurecr.io/eshop
+          ports:
+          - containerPort: 80
